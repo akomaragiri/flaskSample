@@ -21,6 +21,6 @@ node {
     }
 	
 	stage('Deploy') {
-		sh aws eb deploy
+		sh 'aws eb deploy'
     }
 }
