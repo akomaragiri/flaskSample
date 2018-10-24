@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build') {
-        app = docker.build("flask:latest")
+        app = docker.build("akomaragiri/flask:latest")
     }
 	
 	stage('Publish') {
