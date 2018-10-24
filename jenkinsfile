@@ -19,4 +19,8 @@ node {
             app.push("latest")
         }
     }
+	
+	stage('Deploy') {
+		sh aws eb deploy
+    }
 }
