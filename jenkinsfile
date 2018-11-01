@@ -25,9 +25,6 @@ node {
     }
 	
 	stage('Deploy') {
-		echo "PATH = ${PATH}"
-		env.PATH = "C:\Users\akomaragiri\AppData\Roaming\Python\Python37\Scripts:${env.PATH}"
-		echo "PATH = ${PATH}"
-		sh 'eb deploy'
+		sh 'C:\Users\akomaragiri\AppData\Roaming\Python\Python37\Scripts\eb deploy'
     }
 }
