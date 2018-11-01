@@ -25,9 +25,7 @@ node {
     }
 	
 	stage('Deploy') {
-		steps {
-			echo "PATH = ${PATH}"
-			sh 'eb deploy'
-		}
+		echo "PATH = ${PATH}"
+		sh 'eb deploy'
     }
 }
