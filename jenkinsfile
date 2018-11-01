@@ -25,6 +25,6 @@ node {
     }
 	
 	stage('Deploy') {
-		sh 'C:\Users\akomaragiri\AppData\Roaming\Python\Python37\Scripts\eb deploy'
+		sh 'eb deploy'
     }
 }
