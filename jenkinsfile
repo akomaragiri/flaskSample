@@ -1,6 +1,10 @@
 node {
     def app
 	
+	environment {
+		echo "PATH is: $PATH"
+    }
+  
 	stage('Clone') {
         checkout scm
     }
