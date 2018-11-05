@@ -1,6 +1,9 @@
 node {
     def app
 	
+	environment {
+		PATH = "%PATH%;C:\Users\akomaragiri\AppData\Roaming\Python\Python37\Scripts"	
+	}
 	stage('Clone') {
         checkout scm
     }
@@ -20,10 +23,8 @@ node {
         }
     }
 	
-	withEnv(['EB_HOME=C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts']) { 
-		stage('Deploy') {
-			sh 'printenv'
-			sh '$EB_HOME\eb deploy'		
-		}
+	stage('Deploy') {
+		sh 'printenv'
+		sh '$EB_HOME\eb deploy'		
 	}
 }
