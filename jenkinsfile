@@ -23,7 +23,7 @@ node {
 	withEnv(['EB_HOME=C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts']) {
 		stage('Deploy') {
 			sh 'printenv'
-			sh '${env.EB_HOME}\\eb deploy'		
+			bat '${env.EB_HOME}\\eb deploy'		
 		}
 	}
 }
