@@ -2,7 +2,7 @@ node {
     def app
 	
 	environment {
-		PATH = "%PATH%;C:\Users\akomaragiri\AppData\Roaming\Python\Python37\Scripts"	
+		PATH = "%PATH%;C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts"	
 	}
 	stage('Clone') {
         checkout scm
