@@ -25,6 +25,6 @@ node {
 	
 	stage('Deploy') {
 		sh 'printenv'
-		sh '$EB_HOME\eb deploy'		
+		sh 'eb deploy'		
 	}
 }
