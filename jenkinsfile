@@ -25,6 +25,6 @@ node {
 	
 	stage('Deploy') {
 		sh 'printenv'
-		sh 'eb deploy'		
+		sh 'C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts\\eb deploy'		
 	}
 }
