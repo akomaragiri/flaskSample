@@ -24,7 +24,7 @@ node {
 		stage('Deploy') {
 			sh 'pwd'
 			sh 'ls -lt'
-			sh 'eb deploy'		
+			bat 'eb deploy'		
 		}
 	}
 }
