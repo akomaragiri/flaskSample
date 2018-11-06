@@ -24,7 +24,7 @@ pipeline {
 		sh 'pwd'
 		sh 'ls -lt'
 		sh 'printenv'
-		sh '$EB_HOME\\eb deploy'	
+		sh '$EB_HOME/eb deploy'	
       }
     }
   }
