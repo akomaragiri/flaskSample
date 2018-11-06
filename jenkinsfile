@@ -3,7 +3,7 @@ pipeline {
   agent any
   
   environment {
-      PATH = "%PATH%;C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts;"
+      "%PATH%;C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts"
   }
 	
   stages {
