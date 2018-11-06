@@ -2,10 +2,6 @@ pipeline {
   
   agent any
   
-  environment {
-      "%PATH%;C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts"
-  }
-	
   stages {
     stage('Build') {
       steps {
