@@ -24,7 +24,7 @@ node {
 		stage('Deploy') {
 			sh 'pwd'
 			sh 'ls -lt'
-			cmd 'eb deploy'		
+			bat '${EB_HOME}\\eb deploy'		
 		}
 	}
 }
