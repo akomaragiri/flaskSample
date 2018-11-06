@@ -2,8 +2,6 @@ pipeline {
   
   agent any
   
-  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/akomaragiri/flaskSample']]])
-  
   stages {
     stage('Build') {
       steps {
