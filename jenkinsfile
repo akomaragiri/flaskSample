@@ -3,7 +3,7 @@ pipeline {
   agent any
   
   environment {
-      EB_HOME = "C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts"
+      PATH = "%PATH%;C:\\Users\\akomaragiri\\AppData\\Roaming\\Python\\Python37\\Scripts;"
   }
 	
   stages {
@@ -24,7 +24,7 @@ pipeline {
 		sh 'pwd'
 		sh 'ls -lt'
 		sh 'printenv'
-		sh '$EB_HOME/eb deploy'	
+		sh 'eb deploy'	
       }
     }
   }
