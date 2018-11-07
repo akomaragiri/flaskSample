@@ -3,18 +3,6 @@ pipeline {
   agent any
   
   stages {
-   # stage('Build') {
-     # steps {
-       # sh 'docker build -t akomaragiri/flask:latest .'
-     # }
-   # }
-    #stage('Publish') {
-      #steps {
-        #withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
-          #sh 'docker push akomaragiri/flask:latest'
-        #}
-      #}
-    #}
 	stage('Deploy') {
       steps {
 		sh 'pwd'
