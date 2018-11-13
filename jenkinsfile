@@ -6,8 +6,10 @@ pipeline {
 	
 	stage('Deploy') {
       steps {
-		sh "echo ${env.BUILD_NUMBER}"
-		sh "echo ${env}"
+		bat 'set > env.txt' 
+		for (String i : readFile('env.txt').split("\r?\n")) {
+			println i
+		}
       }
     }
   }
