@@ -5,7 +5,7 @@ pipeline {
   stages {
 	stage('Build') {
       steps {
-        sh 'docker build -t akomaragiri/flask:latest .'
+        sh "docker build -t akomaragiri/flask:latest -t akomaragiri/flask:${env.BUILD_NUMBER} ."
       }
     }
     
