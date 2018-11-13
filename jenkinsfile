@@ -6,7 +6,7 @@ pipeline {
 	
 	stage('Deploy') {
       steps {
-		sh "echo ${env.PATH}"
+		sh "echo ${env.BUILD_NUMBER}"
       }
     }
   }
