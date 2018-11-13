@@ -6,6 +6,8 @@ pipeline {
 	
 	stage('Deploy') {
       steps {
+		sh "echo ${PATH}"
+		sh "echo ${env.PATH}"
 		sh "echo ${env.BUILD_NUMBER}"
 		sh "echo ${env.S3_BUCKET}"
 		sh "aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip"
