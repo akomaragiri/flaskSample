@@ -6,10 +6,7 @@ pipeline {
 	
 	stage('Deploy') {
       steps {
-		bat 'set > env.txt' 
-		for (String i : readFile('env.txt').split("\r?\n")) {
-			println i
-		}
+		sh "printenv | grep PATH"
       }
     }
   }
