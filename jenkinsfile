@@ -7,6 +7,7 @@ pipeline {
 	stage('Deploy') {
       steps {
 		sh "printenv | grep PATH"
+		sh "aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip"
       }
     }
   }
