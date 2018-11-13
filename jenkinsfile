@@ -12,7 +12,8 @@ pipeline {
 	stage('Publish') {
       steps {
         withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
-          sh 'docker push akomaragiri/flask:latest'
+          sh "docker push akomaragiri/flask:latest"
+		  sh "docker push akomaragiri/flask:${env.BUILD_NUMBER}"
         }
       }
     }
@@ -21,8 +22,8 @@ pipeline {
       steps {
 		sh "printenv | grep PATH"
 		bat "7z a webapp.zip ."
-		bat "aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip"
-		bat "aws elasticbeanstalk create-application-version --application-name FlaskApp --source-bundle S3Bucket=\"${env.S3_BUCKET}\",S3Key=\"FlaskApp/webapp.zip\" --version-label v${env.BUILD_NUMBER}"
+		bat "aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp${env.BUILD_NUMBER}.zip"
+		bat "aws elasticbeanstalk create-application-version --application-name FlaskApp --source-bundle S3Bucket=\"${env.S3_BUCKET}\",S3Key=\"FlaskApp/webapp${env.BUILD_NUMBER}.zip\" --version-label v${env.BUILD_NUMBER}"
 		bat "aws elasticbeanstalk update-environment --environment-name Flaskapp-env --version-label v${env.BUILD_NUMBER}"
       }
     }
