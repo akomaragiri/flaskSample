@@ -6,7 +6,7 @@ pipeline {
 	
 	stage('Deploy') {
       steps {
-		sh 'echo ${env.BUILD_NUMBER}'
+		sh "echo ${env.BUILD_NUMBER}"
 		sh '''
 			aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip
             aws elasticbeanstalk create-application-version --application-name FlaskApp --source-bundle S3Bucket="${env.S3_BUCKET}",S3Key="FlaskApp/webapp.zip"
