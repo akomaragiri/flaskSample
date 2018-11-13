@@ -8,11 +8,9 @@ pipeline {
       steps {
 		sh "echo ${env.BUILD_NUMBER}"
 		sh "echo ${env.S3_BUCKET}"
-		sh '''
-			aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip
-            aws elasticbeanstalk create-application-version --application-name FlaskApp --source-bundle S3Bucket="${env.S3_BUCKET}",S3Key="FlaskApp/webapp.zip"
-			aws elasticbeanstalk update-environment --environment-name Flaskapp-env --version-label v${env.BUILD_NUMBER}
-        '''
+		sh "aws s3 cp webapp.zip s3://${env.S3_BUCKET}/FlaskApp/webapp.zip"
+        sh "aws elasticbeanstalk create-application-version --application-name FlaskApp --source-bundle S3Bucket=\"${env.S3_BUCKET}\",S3Key=\"FlaskApp/webapp.zip\""
+		sh "aws elasticbeanstalk update-environment --environment-name Flaskapp-env --version-label v${env.BUILD_NUMBER}"
       }
     }
   }
